@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  namespace: three-tier
+  name: mysql
+spec: 
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql
+  template:
+    metadata:
+      labels: 
+        app: mysql
+    spec: 
+      containers:
+      - name: database-ist
+        image: mysql:8.0
+        ports:
+        - containerPort: 3306
+        env: 
+          MYSQL_ROOT_PASSWORD: password
+          MYSQL_DATABASE: istdatabase
+          MYSQL_USER: user
+          MYSQL_PASSWORD: userpassword
+        volumeMounts:
+          - name: mongo-volume
+            mountPath: /data/db
+      volumes: 
+      - name: mysql-volume
+        persistentVolumeClaim:
+          claimName: mysql-volume-claim
