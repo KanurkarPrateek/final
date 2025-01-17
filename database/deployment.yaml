@@ -19,14 +19,18 @@ spec:
         ports:
         - containerPort: 3306
         env: 
-          MYSQL_ROOT_PASSWORD: password
-          MYSQL_DATABASE: istdatabase
-          MYSQL_USER: user
-          MYSQL_PASSWORD: userpassword
+          - name: MYSQL_ROOT_PASSWORD   # Fix: added missing 'name' key
+            value: password
+          - name: MYSQL_DATABASE        # Fix: added missing 'name' key
+            value: istdatabase
+          - name: MYSQL_USER            # Fix: added missing 'name' key
+            value: user
+          - name: MYSQL_PASSWORD        # Fix: added missing 'name' key
+            value: userpassword
         volumeMounts:
-          - name: mongo-volume
-            mountPath: /data/db
+          - name: mysql-volume          # Fix: corrected volume name here to match the 'volumes' definition
+            mountPath: /var/lib/mysql   # Fix: adjusted mount path for mysql storage
       volumes: 
-      - name: mysql-volume
-        persistentVolumeClaim:
-          claimName: mysql-volume-claim
+        - name: mysql-volume           # Fix: corrected volume name to match container volumeMount name
+          persistentVolumeClaim:
+            claimName: mysql-volume-claim
