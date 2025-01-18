@@ -21,7 +21,7 @@ spec:
         - containerPort: 8080
         env:
         - name: DATABASE_URL
-          value: "jdbc:mysql://mysql:3306/istdatabase"
+          value: "jdbc:mysql://mysql-svc:3306/istdatabase"
         - name: DATABASE_USERNAME
           value: "root"
         - name: DATABASE_PASSWORD
