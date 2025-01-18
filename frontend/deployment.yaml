@@ -1,18 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata:
+metadata: 
   namespace: final
-  name: frontend
-spec:
-  replicas: 2
+  name: mysql
+spec: 
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql
   template:
     metadata:
-      labels:
-        label-key : frontend  
-    spec:
+      labels: 
+        app: mysql
+    spec: 
       containers:
-        - name: frontend
-          image: prateekk666/istone-frontend-1.0:app
-          imagePullPolicy: Always
-          ports:
-          - containerPort: 4200
+      - name: frontend-ist
+        image: prateekk666/istone-frontend-1.0
+        ports:
+        - containerPort: 4200
