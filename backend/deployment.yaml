@@ -5,7 +5,7 @@ metadata:
   namespace: final
   name: backend
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: backend
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: prateekk666/istone-backend-1.0:app
+        image: public.ecr.aws/y8u8k9s8/team4/istone:backend-1.0
         ports:
         - containerPort: 8080
         env:
