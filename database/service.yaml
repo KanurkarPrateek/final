@@ -2,12 +2,12 @@ apiVersion: v1
 kind: Service
 metadata:
   namespace: final
-  name: mysql-svc
+  name: mysql
 spec:
   selector:
     app: mysql
   ports:
-  - name: mysql-svc
+  - name: mysql
     protocol: TCP
     port: 3306
     targetPort: 3306

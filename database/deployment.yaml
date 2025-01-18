@@ -14,7 +14,7 @@ spec:
         app: mysql
     spec: 
       containers:
-      - name: database-ist
+      - name: databasecont
         image: mysql:8.0
         ports:
         - containerPort: 3306
