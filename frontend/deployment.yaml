@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata: 
+metadata:
   namespace: final
-  name: frontend
-spec: 
+  name: frontend-deployment
+spec:
   replicas: 1
   selector:
     matchLabels:
       app: frontend
   template:
     metadata:
-      labels: 
+      labels:
         app: frontend
-    spec: 
+    spec:
       containers:
-      - name: frontend-ist
-        image: prateekk666/istone-frontend-1.0
+      - name: istone-frontend
+        image: prateekk666/istone-frontend-1.0:app
         ports:
         - containerPort: 4200
