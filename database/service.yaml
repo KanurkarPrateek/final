@@ -9,5 +9,5 @@ spec:
   ports:
   - name: mysql-svc
     protocol: TCP
-    port: 27017
-    targetPort: 27017
+    port: 3306
+    targetPort: 3306
