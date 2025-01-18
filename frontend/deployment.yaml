@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: istone-frontend
-        image: prateekk666/istone-frontend-1.0:app
+        image: public.ecr.aws/y8u8k9s8/team4/istone:frontend-1.0
         ports:
         - containerPort: 4200
