@@ -8,5 +8,5 @@ spec:
   - port: 4200
     protocol: TCP
   type: ClusterIP
-  selector: NodePort
+  selector:
     role: frontend
