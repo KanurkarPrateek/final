@@ -2,16 +2,16 @@ apiVersion: apps/v1
 kind: Deployment
 metadata: 
   namespace: final
-  name: mysql
+  name: frontend
 spec: 
   replicas: 1
   selector:
     matchLabels:
-      app: mysql
+      app: frontend
   template:
     metadata:
       labels: 
-        app: mysql
+        app: frontend
     spec: 
       containers:
       - name: frontend-ist
