@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend-deployment
+  labels:
+    app: frontend
 spec:
   replicas: 1
   selector:
@@ -15,5 +17,6 @@ spec:
       containers:
       - name: frontend
         image: public.ecr.aws/y8u8k9s8/team4/istone:frontend-1.0
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 4200
