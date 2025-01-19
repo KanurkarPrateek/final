@@ -21,6 +21,6 @@ spec:
         imagePullPolicy: IfNotPresent
         env:
         - name: BACKEND_URL
-          value: "http://18.117.114.52:31543/api/v1/employees"
+          value: "http://http://3.21.159.25:32433/api/v1/employees"
         ports:
         - containerPort: 4200
